@@ -1,4 +1,4 @@
-package com.poc;
+/*package com.poc;
 
 import static org.assertj.core.api.Assertions.assertThat;
 //import static org.assertj.core.api.Assertions.assertThat;
@@ -27,7 +27,7 @@ import org.springframework.test.web.servlet.RequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
+/*import com.fasterxml.jackson.databind.ObjectMapper;
 import com.poc.controller.*;
 import com.poc.model.User;
 import com.poc.repo.UserRepo;
@@ -49,9 +49,9 @@ public class ControllerTest {
 	
 	@MockBean
 	private UserRepo userrepo;
+	*/
 	
-	
-	
+	/*
 	@Test
 	public void createusertest() throws Exception {
 		
@@ -84,7 +84,7 @@ public class ControllerTest {
 					 assertThat(outputInjson).isEqualTo(InputinJson);
 					 assertEquals(HttpStatus.OK.value(),response.getStatus());
 }
-	
+	*/
 /*	@Test
 	public void findbyfirstnameTest() throws Exception {
 		
@@ -134,7 +134,7 @@ public class ControllerTest {
 					 assertThat(outputInjson).isEqualTo(expecdtedjson);
 					// assertEquals(HttpStatus.OK.value(),response.getStatus());
 }*/
-	public String mapToJSon (Object object) throws JsonProcessingException {
+	/*public String mapToJSon (Object object) throws JsonProcessingException {
 		ObjectMapper objectmapper = new ObjectMapper();
 		return objectmapper.writeValueAsString(object);
 		
@@ -142,5 +142,4 @@ public class ControllerTest {
 		
 		
 	}
-	   
-}
+	 */

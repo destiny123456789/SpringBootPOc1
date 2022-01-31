@@ -7,15 +7,14 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
+//import lombok.AllArgsConstructor;
+//import lombok.Data;
 
-import lombok.NoArgsConstructor;
+//import lombok.NoArgsConstructor;
 
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
+
+
 @Entity
 @Table(name="User")
 public class User {
@@ -39,7 +38,7 @@ public class User {
 	@Column(nullable = false)
 	private String joindate;
 	
-	/*public User() {
+	public User() {
 		
 	}
 
@@ -54,8 +53,8 @@ public class User {
 		this.dob = dob;
 		this.joindate = joindate;
 	}
-*/
-	/*public Integer getId() {
+
+	public Integer getId() {
 		return id;
 	}
 
@@ -110,7 +109,7 @@ public class User {
 	public void setJoindate(String joindate) {
 		this.joindate = joindate;
 	}
-	*/
+	
 	
 	
 	

@@ -1,4 +1,4 @@
-package com.poc;
+/*package com.poc;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
@@ -81,14 +81,14 @@ public class Poc3ApplicationTests {
 	
 	
 	
-	@Test
+/*	@Test
 	public void addusertest() {
 		User user = new User(99,"Nilesh","Kotkar","Chalisgaon","424101","12-04-1970","02-03-2020");
 	
 		when(userrepo.save(user)).thenReturn(user);
 		assertEquals(user, uservice.adduser(user));
 	
-	}
+	}*/
 	/*@Test
 	public void createusertest() throws Exception {
 		
@@ -175,11 +175,11 @@ public class Poc3ApplicationTests {
 	                .addFilter(springSecurityFilterChain)
 	                .build();
 	  }*/
-	  ObjectMapper om = new ObjectMapper();
+	/*  ObjectMapper om = new ObjectMapper();
 
 	@Test
 	void contextLoads() {
-	}
+	}*/
 	//@SuppressWarnings("deprecation")
 /*	@Test
 	public void createuser() throws Exception {
@@ -271,6 +271,3 @@ public class Poc3ApplicationTests {
 	   String content = mvcResult.getResponse().getContentAsString();
 	   assertEquals(content, "Product is created successfully");
 	}*/
-	 
-
-}

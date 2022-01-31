@@ -8,6 +8,7 @@ import javax.websocket.server.PathParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -37,6 +38,7 @@ public class RegistrationController {
     
 	@PostMapping(value="/add")
 	@ResponseBody
+	@CrossOrigin
 	public User createuser(@RequestBody User user) {
 		System.out.println(user);
 		return userservice.adduser(user);
@@ -45,6 +47,7 @@ public class RegistrationController {
 	}
 	
 	@RequestMapping(value="/userupdate/{id}",method =RequestMethod.PUT, consumes ="application/json")
+	@CrossOrigin
 	public ResponseEntity<Object> updateUser(@RequestBody User user,@PathVariable int id) {
 
 		User useroptional = userrepo.findById(id);
@@ -68,12 +71,14 @@ public class RegistrationController {
 			}
 	
 	@DeleteMapping("/udelete/{id}")
+	@CrossOrigin
 	public ResponseEntity<Object> deletedbyid(@PathVariable int id) {
 		 userrepo.deleteById(id);
 		 return new ResponseEntity<>("Data is deleted successsfully", HttpStatus.OK);
 	}
 	
 	@GetMapping("/firstname/{nameone}")
+	@CrossOrigin
 	public List<User> searchbyname(@PathVariable(value = "nameone") String name) {
 		System.out.println("name is "+name);
 		return userrepo.findByfirstName(name);
@@ -81,31 +86,45 @@ public class RegistrationController {
 		
 	}
 	@GetMapping("/surname/{surnamename}")
+	@CrossOrigin
 	public List<User> searchbysurname(@PathVariable(value = "surnamename") String surnamename) {
 		return userrepo.findBylastName(surnamename);
 		
 	}
 	@GetMapping("/pincode/{pinocde}")
+	@CrossOrigin
 	public List<User> searchbysurnamename(@PathVariable(value = "pinocde") String pincode) {
 		return userrepo.findByPincode(pincode);
 		
 	}
 	
 	 @GetMapping(value = "/orderbydob")
+	 @CrossOrigin
 	    public List<User> getUsersbydob() {
 
 	        return userservice.findAllOrderByDobAsc();
 	    }
 	 
 	 @GetMapping(value = "/orderbydoj")
+	 @CrossOrigin
 	    public List<User> getUsersbydoj() {
 
 	        return userservice.findAllOrderByDojAsc();
 	    }
-	/*@RequestMapping(value = "/hi", method = RequestMethod.GET, produces = "application/json")
+	@RequestMapping(value = "/hi", method = RequestMethod.GET, produces = "application/json")
+	@CrossOrigin
 	public String testing() {
-		return "test";
-	}*/
+		return "tested";
+	}
+	
+	@RequestMapping("/all")
+	@CrossOrigin
+	public List<User> getall() {
+		//System.out.println("name is "+name);
+		return userrepo.findAll();
+		//return userservice.findbyfirstnameservice(name);
+		
+	}
 	
 		
 
